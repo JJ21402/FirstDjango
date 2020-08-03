@@ -1,12 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h2>HomePage</h2>
-    <p>JJPnz</p>
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block content %}
+    <h2>Title : {{name}}</h2>
+    <h2>Author : {{author}}</h2>
+    <h2>Tags</h2>
+        <ul>
+            {% for tag in tags %}
+                <li>{{tag}}</li>
+            {% endfor %}   
+        </ul>
+        <h2>Rating</h2>
+        {% if rating > 3 %}
+            <h3>HotHit</h3>
+        {% else %}
+            <h3>normal</h3>
+        {% endif %}
+{% endblock %}
